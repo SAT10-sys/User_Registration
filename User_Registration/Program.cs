@@ -54,11 +54,13 @@ namespace User_Registration
             }
         RegStart5:
             Console.WriteLine(" Password Rules: ");
-            Console.WriteLine(" Password should have minimum 8 characters(letters and digits)");
+            Console.WriteLine("* Password should have minimum 8 characters(letters and digits)");
+            Console.WriteLine("* PAssword should have at least 1 capital letter");
             Console.WriteLine(" Enter PAssword ");
             string password = Console.ReadLine();
             bool checkPassword1 = userDetails.ValidatePasswordRule1(password);
-            if (checkPassword1 == true)
+            bool checkPassword2 = userDetails.ValidatePasswordRule2(password);
+            if (checkPassword1 == true && checkPassword2==true)
                 Console.WriteLine(" PASSWORD: " + password);
             else
             {
