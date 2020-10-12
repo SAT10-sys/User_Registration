@@ -52,6 +52,19 @@ namespace User_Registration
                 Console.WriteLine(" Please enter valid mobile number ");
                 goto RegStart4;
             }
+        RegStart5:
+            Console.WriteLine(" Password Rules: ");
+            Console.WriteLine(" Password should have minimum 8 characters(letters and digits)");
+            Console.WriteLine(" Enter PAssword ");
+            string password = Console.ReadLine();
+            bool checkPassword1 = userDetails.ValidatePasswordRule1(password);
+            if (checkPassword1 == true)
+                Console.WriteLine(" PASSWORD: " + password);
+            else
+            {
+                Console.WriteLine(" Please enter valid password ");
+                goto RegStart5;
+            }
         }
     }
 }
