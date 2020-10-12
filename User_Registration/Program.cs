@@ -57,12 +57,11 @@ namespace User_Registration
             Console.WriteLine("* Password should have minimum 8 characters(letters and digits)");
             Console.WriteLine("* Password should have at least 1 capital letter");
             Console.WriteLine(" Password should have at least 1 digit ");
+            Console.WriteLine(" Password should have at least 1 special character ");
             Console.WriteLine(" Enter Password ");
             string password = Console.ReadLine();
-            bool checkPassword1 = userDetails.ValidatePasswordRule1(password);
-            bool checkPassword2 = userDetails.ValidatePasswordRule2(password);
-            bool checkPassword3 = userDetails.ValidatePasswordRule3(password);
-            if (checkPassword1 == true && checkPassword2==true && checkPassword3==true)
+            bool checkPassword = userDetails.ValidatePassword(password);
+            if (checkPassword == true)
                 Console.WriteLine(" PASSWORD: " + password);
             else
             {
