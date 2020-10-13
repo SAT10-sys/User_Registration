@@ -52,5 +52,16 @@ namespace UserRegistrationTest
             bool result = user_Details.ValidatePassword(password);
             Assert.AreEqual(expectedResult, result);
         }
+        public void ValidateMultipleEmail()
+        {
+            string message=null;
+            User_Details user_Details = new User_Details();
+            bool checkEmail1 = user_Details.ValidateEmail("abc@gmail.com");
+            bool checkEmail2 = user_Details.ValidateEmail("abc-100@gmail.com");
+            bool checkEmail3 = user_Details.ValidateEmail("abc@yahoo.co.in");
+            if(checkEmail1==true && checkEmail2==true && checkEmail3==true)
+                message="Email Validation is Successfull";
+            Assert.AreEqual("Email Validation is successfull", message);
+        }
     }
 }
