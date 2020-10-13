@@ -63,5 +63,134 @@ namespace UserRegistrationTest
                 message="Email Validation is Successfull";
             Assert.AreEqual("Email Validation is successfull", message);
         }
+        public void IfEmptyFirstNameShouldReturnThisException()
+        {
+            try
+            {
+                User_Details user_Details = new User_Details();
+                string message = string.Empty;
+                bool checkEmptyFirstName = user_Details.ValidateFirstName(message);
+            }
+            catch(UserRegistrationCustomException e)
+            {
+                Assert.AreEqual("First Name cannot be empty", e.message);
+            }
+        }
+        public void IfNullFirstNameShouldReturnThisException()
+        {
+            try
+            {
+                User_Details user_Details = new User_Details();
+                string message = null;
+                bool checkNullFirstName = user_Details.ValidateFirstName(message);
+            }
+            catch(UserRegistrationCustomException e)
+            {
+                Assert.AreEqual("First Name cannot be null", e.message);
+            }
+        }
+        public void IfEmptyLastNameShouldReturnThisException()
+        {
+            try
+            {
+                User_Details user_Details = new User_Details();
+                string message = string.Empty;
+                bool checkEmptyLastName = user_Details.ValidateLastName(message);
+            }
+            catch(UserRegistrationCustomException e)
+            {
+                Assert.AreEqual("Last Name cannot be empty", e.message);
+            }
+        }
+        public void IfNullLastNameShouldReturnThisException()
+        {
+            try
+            {
+                User_Details user_Details = new User_Details();
+                string message = null;
+                bool checkNullLastNAme = user_Details.ValidateLastName(message);
+            }
+            catch(UserRegistrationCustomException e)
+            {
+                Assert.AreEqual("Last Name cannot be null", e.message);
+            }
+        }
+        public void IfEmptyEmailShouldReturnThsiException()
+        {
+            try
+            {
+                User_Details user_Details = new User_Details();
+                string message = string.Empty;
+                bool checkEmptyEmail = user_Details.ValidateEmail(message);
+            }
+            catch(UserRegistrationCustomException e)
+            {
+                Assert.AreEqual("Email ID cannot be empty", e.message);
+            }
+        }
+        public void IfNullEmailShouldReturnThisException()
+        {
+            try
+            {
+                User_Details user_Details = new User_Details();
+                string message = null;
+                bool checkNullEmail = user_Details.ValidateEmail(message);
+            }
+            catch(UserRegistrationCustomException e)
+            {
+                Assert.AreEqual("Email ID cannot be null", e.message);
+            }
+        }public void IfEmptyPhoneNoShouldReturnThisException()
+        {
+            try
+            {
+                User_Details user_Details = new User_Details();
+                string message = string.Empty;
+                bool checkEmptyPhoneNo = user_Details.ValidateMobileNo(message);
+            }
+            catch(UserRegistrationCustomException e)
+            {
+                Assert.AreEqual("Phone Number cannot be empty", e.message);
+            }
+        }
+        public void IfNullPhoneNoShouldReturnThisException()
+        {
+            try
+            {
+                User_Details user_Details = new User_Details();
+                string message = null;
+                bool checkNullPhoneNo = user_Details.ValidateMobileNo(message);
+            }
+            catch(UserRegistrationCustomException e)
+            {
+                Assert.AreEqual("Phone Number cannot be null", e.message);
+            }
+        }
+        public void IfEmptyPasswordShouldReturnThisException()
+        {
+            try
+            {
+                User_Details user_Details = new User_Details();
+                string message = string.Empty;
+                bool checkEmptyPassword = user_Details.ValidatePassword(message);
+            }
+            catch(UserRegistrationCustomException e)
+            {
+                Assert.AreEqual("Password cannot be empty", e.message);
+            }
+        }
+        public void IfNullPassowrdShouldReturnThisException()
+        {
+            try
+            {
+                User_Details user_Details = new User_Details();
+                string message = null;
+                bool checkNullPassword = user_Details.ValidatePassword(message);
+            }
+            catch (UserRegistrationCustomException e)
+            {
+                Assert.AreEqual("Password cannot be null", e.message);
+            }
+        }
     }
 }
